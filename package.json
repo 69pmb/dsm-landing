@@ -8,7 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "postinstall": "ngcc",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run dsm-landing:serve-ssr",
+    "serve:ssr": "node dist/dsm-landing/server/main.js",
+    "build:ssr": "ng build --prod && ng run dsm-landing:server:production",
+    "prerender": "ng run dsm-landing:prerender"
   },
   "private": true,
   "dependencies": {
@@ -19,11 +23,14 @@
     "@angular/forms": "~11.0.3",
     "@angular/platform-browser": "~11.0.3",
     "@angular/platform-browser-dynamic": "~11.0.3",
+    "@angular/platform-server": "~11.0.3",
     "@angular/router": "~11.0.3",
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "@nguniversal/express-engine": "^11.0.1",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.5.3",
     "core-js": "^2.6.11",
+    "express": "^4.15.2",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -33,7 +40,9 @@
     "@angular/cli": "~11.0.3",
     "@angular/compiler-cli": "~11.0.3",
     "@angular/language-service": "~11.0.3",
+    "@nguniversal/builders": "^11.0.1",
     "@types/core-js": "^2.5.4",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.1",
